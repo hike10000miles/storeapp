@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" ng-app="store">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>firstApp</title>
+
+    <!-- build:css styles/vendor.css -->
+    <link rel="stylesheet" type="text/css" href="../bower_components/normalize-css/normalize.css">
+    
+    <!-- endbuild -->
+
+    <link rel="stylesheet" href="styles/main.css">
+
+    
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="nav">
+        <ul class="menu">
+          <li class="item">Home</li>
+          <li class="item">Products</li>
+          <li class="item">Press</li>
+          <li class="item">Contacts</li>
+        </ul>
+      </div>
+      <div class="product_container" ng-controller="StoreController as store">
+        <div>
+          <h1>{{store.products[0].brand}}</h1>
+          <h2>{{store.products[0].modle}}</h2>
+          <h2>${{store.products[0].price}}</h2>
+          <p>{{store.products[0].description}}</p>
+          <button ng-show="store.products.canPurchase">Add to cart</buttoon>
+        </div>
+        <div>
+          <h1>{{store.products[1].brand}}</h1>
+          <h2>{{store.products[1].modle}}</h2>
+          <h2>${{store.products[1].price}}</h2>
+          <p>{{store.products[1].description}}</p>
+          <button ng-show="store.products.canPurchase">Add to cart</buttoon>
+        </div>
+        <div>
+          <h1>{{store.products[2].brand}}</h1>
+          <h2>{{store.products[2].modle}}</h2>
+          <h2>${{store.products[2].price}}</h2>
+          <p>{{store.products[2].description}}</p>
+          <button ng-show="store.products.canPurchase">Add to cart</buttoon>
+        </div>
+      </div>
+    </div>
+    <footer></footer>
+    <!-- build:js scripts/main.js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="scripts/app.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
