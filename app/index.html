@@ -26,26 +26,12 @@
         </ul>
       </div>
       <div class="product_container" ng-controller="StoreController as store">
-        <div>
-          <h1>{{store.products[0].brand}}</h1>
-          <h2>{{store.products[0].modle}}</h2>
-          <h2>${{store.products[0].price}}</h2>
-          <p>{{store.products[0].description}}</p>
-          <button ng-show="store.products.canPurchase">Add to cart</buttoon>
-        </div>
-        <div>
-          <h1>{{store.products[1].brand}}</h1>
-          <h2>{{store.products[1].modle}}</h2>
-          <h2>${{store.products[1].price}}</h2>
-          <p>{{store.products[1].description}}</p>
-          <button ng-show="store.products.canPurchase">Add to cart</buttoon>
-        </div>
-        <div>
-          <h1>{{store.products[2].brand}}</h1>
-          <h2>{{store.products[2].modle}}</h2>
-          <h2>${{store.products[2].price}}</h2>
-          <p>{{store.products[2].description}}</p>
-          <button ng-show="store.products.canPurchase">Add to cart</buttoon>
+        <div ng-repeat="product in store.products">
+          <h1>{{product.brand}}</h1>
+          <h2>{{product.modle}}</h2>
+          <h2>${{product.price}}</h2>
+          <p>{{product.description}}</p>
+          <button ng-show="productscanPurchase">Add to cart</buttoon>
         </div>
       </div>
     </div>
