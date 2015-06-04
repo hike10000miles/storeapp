@@ -26,12 +26,31 @@
         </ul>
       </div>
       <div class="product_container" ng-controller="StoreController as store">
-        <div ng-repeat="product in store.products">
-          <h1>{{product.brand}}</h1>
-          <h2>{{product.modle}}</h2>
-          <h2>${{product.price}}</h2>
-          <p>{{product.description}}</p>
-          <button ng-show="productscanPurchase">Add to cart</buttoon>
+        <div class="product_detail" ng-repeat="product in store.products">
+          <p class="product_brand">{{product.brand}}</p>
+          <p class="product_modle">{{product.modle}}</p>
+          <img class="product_image" ng-src="{{product.images[0].full}}">
+          <p class="product_price">{{product.price | currency}}</p>
+          <div class="product_panel">
+            <ul class="product_nav">
+              <li class="nav_pill"><a href ng-click="tab = 1">Description</a></li>
+              <li class="nav_pill"><a href ng-click="tab = 2">Specifications</a></li>
+              <li class="nav_pill"><a href ng-click="tab = 3">Reviews</a></li>
+            </ul>
+            <div class="panel" ng-show="tab === 1">
+              <h4>Description</h4>
+              <p>{{product.description}}</p>
+            </div>
+            <div class="panel" ng-show="tab === 2">
+              <h4>Specifications</h4>
+              <blockquote>None yet</blockquote>
+            </div>
+            <div class="panel" ng-show="tab === 3">
+              <h4>Reviews</h4>
+              <blockquote>None yet</blockquote>
+            </div>            
+          </div>
+          <button class="purchaseButton" ng-show="product.canPurchase">Add to cart</buttoon>
         </div>
       </div>
     </div>

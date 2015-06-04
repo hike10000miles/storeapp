@@ -36,7 +36,29 @@ body {
 /*****************************************************************************
   Layout Styles
 ******************************************************************************/
-
+.nav {
+	height: 5rem;
+	width: 100%;
+  .menu {
+  	  margin: 0;
+	  padding-top: 1rem;
+	  padding-left: 0;
+	.item {
+		height: 3rem;
+		display: inline-block;
+		@include span-columns(3);
+        @include omega(4n);
+	}
+  }
+}
+.product_container {
+	width: 100%;
+	/*@include outer-container;
+	.product_detail {
+	    @include span-columns(4);
+        @include omega(5n);
+	}*/
+}
 
 
 
@@ -45,24 +67,39 @@ body {
   Module Styles
 ******************************************************************************/
 .nav {
-	height: 5rem;
-	width: 100%;
 	text-align: center;
   .menu {
-  	  margin: 0;
-	  padding-top: 1rem;
-	  padding-left: 0;
 	.item {
-		height: 3rem;
 		text-align: center;
 		list-style: none;
-		display: inline-block;
 		background-color: blue;
 		padding-top: 1rem;
-		@include span-columns(3);
-        @include omega(4n);
 	}
   }
 }
-
-
+.product_detail {
+	text-align: center;	
+	.purchaseButton {
+		border-radius: 5px;
+	}
+	.product_image {
+		width: 90%;
+		height: 90%;
+	}
+	.product_nav {
+		padding: 0;
+		.nav_pill {
+		    text-align: center;
+		    list-style: none;
+		    background-color: white;
+		    display: inline-block;
+		    a {
+			    text-decoration: none;
+			    color: black;
+		    }
+		}
+	}
+}
+.active {
+	background-color: red;
+}
