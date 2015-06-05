@@ -27,25 +27,32 @@
       </div>
       <div class="product_container" ng-controller="StoreController as store">
         <div class="product_detail" ng-repeat="product in store.products">
-          <p class="product_brand">{{product.brand}}</p>
+          <div class="product_brand">
+            <div id="product_indicator" ng-show="product.indicator">
+              <p>
+                {{product.status}}
+              </p>
+            </div>
+            {{product.brand}}
+          </div>
           <p class="product_modle">{{product.modle}}</p>
           <img class="product_image" ng-src="{{product.images[0].full}}">
           <p class="product_price">{{product.price | currency}}</p>
-          <div class="product_panel">
+          <div class="product_panel" ng-controller="PanelController as panel">
             <ul class="product_nav">
-              <li class="nav_pill"><a href ng-click="tab = 1">Description</a></li>
-              <li class="nav_pill"><a href ng-click="tab = 2">Specifications</a></li>
-              <li class="nav_pill"><a href ng-click="tab = 3">Reviews</a></li>
+              <li class="nav_pill" ng-class="{ active: panel.isSelected(1)}"><a href ng-click="panel.selectTab(1)">Description</a></li>
+              <li class="nav_pill" ng-class="{ active: panel.isSelected(2)}"><a href ng-click="panel.selectTab(2)">Specifications</a></li>
+              <li class="nav_pill" ng-class="{ active: panel.isSelected(3)}"><a href ng-click="panel.selectTab(3)">Reviews</a></li>
             </ul>
-            <div class="panel" ng-show="tab === 1">
+            <div class="panel" ng-show="panel.isSelected(1)">
               <h4>Description</h4>
               <p>{{product.description}}</p>
             </div>
-            <div class="panel" ng-show="tab === 2">
+            <div class="panel" ng-show="panel.isSelected(2)">
               <h4>Specifications</h4>
               <blockquote>None yet</blockquote>
             </div>
-            <div class="panel" ng-show="tab === 3">
+            <div class="panel" ng-show="panel.isSelected(3)">
               <h4>Reviews</h4>
               <blockquote>None yet</blockquote>
             </div>            

@@ -11,6 +11,8 @@
   	  description: 'A true classic, the first ever watch went to the space!',
   	  canPurchase: true,
   	  soldOut: false,
+      indicator: true,
+      status: "NEW",
       images: [
         {
           full:'../images/Speedmaster.jpg'
@@ -24,6 +26,8 @@
   	  description: "The first Bond's watch, a classic explorer's watch.",
   	  canPurchase: true,
   	  soldOut: false,
+      indicator: true,
+      status: "HOT",
       images: [
         {
           full:'../images/Rolex-Submariner.jpg'
@@ -44,5 +48,15 @@
       ]      
     }
   ];
+  app.controller("PanelController", function(){
+    this.tab = 1;
+
+    this.selectTab = function(setTab) {
+      this.tab = setTab;
+    };
+    this.isSelected = function(checkTab) {
+      return this.tab === checkTab;
+    };
+  });
 
 }) ();
