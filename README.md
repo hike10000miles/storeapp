@@ -1,3 +1,2 @@
 # firstApp
-
-You should put a description of your project here, plus any setup instructions for other developers, if necessary.
+Tools used in this product, Sass, AngularJS, jQuery and Bourbon. This is the first web app I am making, just want to apply some of the AngularJS I learnt.
