@@ -18,20 +18,19 @@
   <body>
     <div class="main">
       <div class="nav">
+        <div class="toggleButton"><span></span></div>
         <ul class="menu">
-          <li class="item">Home</li>
-          <li class="item">Products</li>
-          <li class="item">Press</li>
-          <li class="item">Contacts</li>
+          <li class="item"><a href="">Home</a></li>
+          <li class="item"><a href="">Products</a></li>
+          <li class="item"><a href="">Press</a></li>
+          <li class="item"><a href="">Contacts</a></li>
         </ul>
       </div>
       <div class="product_container" ng-controller="StoreController as store">
         <div class="product_detail" ng-repeat="product in store.products">
           <div class="product_brand">
             <div id="product_indicator" ng-show="product.indicator">
-              <p>
-                {{product.status}}
-              </p>
+              <p>{{product.status}}</p>
             </div>
             {{product.brand}}
           </div>

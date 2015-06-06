@@ -41,11 +41,28 @@
   	  description: "The finest of the chronograph watches.",
   	  canPurchase: true,
   	  soldOut: false,
+      indicator: false,
+      status: null,
       images: [
         {
           full:'../images/Zenith El Primero.jpg'
         }
       ]      
+    },
+    {
+      brand: 'Jaeger-LeCoulter',
+      modle: 'Master Tourbillon',
+      price: 20300,
+      description: "Master work from Jaeger-LeCoulter, totally commited to accuracy and reliability.",
+      canPurchase: true,
+      soldOut: false,
+      indicator: false,
+      status: null,
+      images: [
+        {
+          full:'../images/Jaeger-LeCoultre Tourbillon.jpg'
+        }
+      ]        
     }
   ];
   app.controller("PanelController", function(){

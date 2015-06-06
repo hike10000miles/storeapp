@@ -37,17 +37,21 @@ body {
   Layout Styles
 ******************************************************************************/
 .nav {
-	height: 5rem;
 	width: 100%;
+	.toggleButton {
+		width: 30px;
+		height: 30px;
+	}
   .menu {
   	  margin: 0;
-	  padding-top: 1rem;
 	  padding-left: 0;
 	.item {
 		height: 3rem;
-		display: inline-block;
+		width: 100%;
+		padding-top: 1rem;
+		/*display: inline-block;
 		@include span-columns(3);
-        @include omega(4n);
+        @include omega(4n);*/
 	}
   }
 }
@@ -65,8 +69,7 @@ body {
 	    border-top: 50px solid red;
 	    border-right: 50px solid transparent;
 	    margin: 0;
-	    position: relative;
-	    top: 30px;
+	    position: absolute;
 	    p {
 	    	position: relative;
 	    	top: -49px;
@@ -91,12 +94,36 @@ body {
 ******************************************************************************/
 .nav {
 	text-align: center;
+	    .toggleButton {
+	    	border: 2px solid black;
+	    }
+        .toggleButton span,
+        .toggleButton span:before,
+        .toggleButton span:after {
+  			cursor: pointer;
+  			height: 2px;
+  			width: 28px;
+  			background: #FFFFFF;
+  			position: absolute;
+  			display: block;
+  			content: '';
+			}
+		.toggleButton span:before {
+  			margin-top: -6px;
+			}
+		.toggleButton span:after {
+  			margin-top: 6px;
+			}	
   .menu {
 	.item {
 		text-align: center;
 		list-style: none;
-		background-color: blue;
-		padding-top: 1rem;
+		background-color: white;
+		border-bottom: 2px solid black;
+	}
+	a {
+		text-decoration: none;
+		color: black;
 	}
   }
 }
