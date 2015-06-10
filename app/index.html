@@ -16,7 +16,12 @@
   </head>
 
   <body>
+    <!--the title of the shop-->
+    <div class="shopName">
+      <h2 class="title">The Lurxy Watch Shop</h2>
+    </div>
     <div class="main">
+      <!--the nav-->
       <div class="nav">
         <div class="toggleButton"><span></span></div>
         <ul class="menu">
@@ -26,6 +31,7 @@
           <li class="item"><a href="">Contacts</a></li>
         </ul>
       </div>
+      <!--product listing-->
       <div class="product_container" ng-controller="StoreController as store">
         <div class="product_detail" ng-repeat="product in store.products">
           <div class="product_brand">
@@ -37,6 +43,7 @@
           <p class="product_modle">{{product.modle}}</p>
           <img class="product_image" ng-src="{{product.images[0].full}}">
           <p class="product_price">{{product.price | currency}}</p>
+          <!--interactive products details-->
           <div class="product_panel" ng-controller="PanelController as panel">
             <ul class="product_nav">
               <li class="nav_pill" ng-class="{ active: panel.isSelected(1)}"><a href ng-click="panel.selectTab(1)">Description</a></li>
