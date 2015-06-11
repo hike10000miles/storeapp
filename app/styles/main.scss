@@ -63,12 +63,12 @@ body {
 }
 .product_container {
 	width: 100%;
-	.product_panel {
+	/*.product_panel {
 		.nav_pill {
 			@include span-columns(2);
 			@include omega(3n);
 		}
-	}
+	}*/
 	#product_indicator {
 		width: 0;
 	    height: 0;
@@ -173,7 +173,7 @@ body {
   }
 }
 .product_container {
-  background-color: white;
+  /*background-color: white;*/
   .product_detail {
 	  margin-top: 0;
 	  padding-top: 20px;
@@ -189,41 +189,57 @@ body {
 		  width: 90%;
 		  height: 90%;
 	  }
-	  .product_nav {
-		  padding-left: 0;
-		  padding-bottom: 1rem;
-		  .nav_pill {
-		      text-align: center;
-		      list-style: none;
-		      display: inline-block;
-		      margin-right: 50px;
-		      a {
-			      text-decoration: none;
-			      color: black;
+	  .product_panel {
+		  background-color: gray;
+		  padding-top: 10px;
+		  padding-bottom: 10px;
+		  border-radius: 5px;
+		  .product_nav {
+			  margin: 0;
+		  	  padding-left: 0;
+		  	  padding-bottom: 1rem;
+		  	  .nav_pill {
+		          text-align: left;
+		          list-style: none;
+		          display: inline-block;
+		          a {
+			          text-decoration: none;
+			          color: black;
+		          }
 		      }
-		  }
+	      }
+	 	  .panel {
+			  margin-left: 5%;
+			  margin-right: 5%;
+	  	      .panel_name {
+	  	  	      text-align: left;	      
+	          }
+	          .panel_body {
+	          	  text-align: left;
+	          }   
+	      }
 	  }
   }
-}  
+}
+@media screen and (min-width: 600px) {
+	.product_detail {
+		@include outer-container;
+		.product_brand {
+			@include span-columns(6);
+			@include omega(7n);
+		}
+		.product_panel {
+			@include span_columns(6);
+			margin-right: 0;
+			border-radius: 5px;
+			height: 100%;
+		}
+	}
+}
+
 .active {
 	background-color: white;
 	border-radius: 5px;
-	width: 1.5rem;
-}
-.product_panel {
-	background-color: gray;
-	width: 100%;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	.product_nav {
-		margin: 0;
-	}
-	.panel {
-		margin-left: 10%;
-		margin-right: 10%;
-		margin-top: 20px;
-		border: 2px solid black;
-	}
 }
 .exitting_review {
 	text-align: left;

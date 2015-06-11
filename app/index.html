@@ -39,10 +39,12 @@
               <p>{{product.status}}</p>
             </div>
             {{product.brand}}
+    
+            <p class="product_modle">{{product.modle}}</p>
+            <img class="product_image" ng-src="{{product.images[0].full}}">
+            <p class="product_price">{{product.price | currency}}</p>
+            <button class="purchaseButton" ng-show="product.canPurchase">Add to cart</buttoon>
           </div>
-          <p class="product_modle">{{product.modle}}</p>
-          <img class="product_image" ng-src="{{product.images[0].full}}">
-          <p class="product_price">{{product.price | currency}}</p>
           <!--interactive products details-->
           <div class="product_panel" ng-controller="PanelController as panel">
             <ul class="product_nav">
@@ -51,20 +53,20 @@
               <li class="nav_pill" ng-class="{ active: panel.isSelected(3)}"><a href ng-click="panel.selectTab(3)">Reviews</a></li>
             </ul>
             <div class="panel" ng-show="panel.isSelected(1)">
-              <h4>Description</h4>
-              <p>{{product.description}}</p>
+              <h4 class="panel_name">Description</h4>
+              <p class="panel_body">{{product.description}}</p>
             </div>
             <div class="panel" ng-show="panel.isSelected(2)">
-              <h4>Specifications</h4>
+              <h4 class="panel_name">Specifications</h4>
               <blockquote>None yet</blockquote>
             </div>
             <div class="panel" ng-show="panel.isSelected(3)">
-              <h4>Reviews</h4>
-              <blockquote class="exitting_review" ng-repeat="review in product.reviews">
+              <h4 class="panel_name">Reviews</h4>
+              <P class="panel_body" ng-repeat="review in product.reviews">
                 <b>Stars: {{review.stars}}</b>
                 {{review.body}}<br>
                 <cite>by: {{review.author}}</cite>
-              </blockquote>
+              </P>
               <form name="reviewForm" class="product_review" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
                 <p>
                   <b>Stars: {{reviewCtrl.review.stars}}</b>
@@ -89,7 +91,6 @@
               </form>
             </div>            
           </div>
-          <button class="purchaseButton" ng-show="product.canPurchase">Add to cart</buttoon>
         </div>
       </div>
     </div>
