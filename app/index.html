@@ -58,7 +58,13 @@
             </div>
             <div class="panel" ng-show="panel.isSelected(2)">
               <h4 class="panel_name">Specifications</h4>
-              <blockquote>None yet</blockquote>
+              <div class="panel_body">
+                <p>Features: <br>{{product.features[0]}} {{product.features[1]}} {{product.features[2]}}</p>
+                <p>Size: <br>{{product.size}}</p>
+                <p>Movement: <br>{{product.movement}}</p>
+                <p>Power Reserve: <br>{{product.powerReserve}}</p>
+                <p>Material: <br>{{product.material}}</p>
+              </div>
             </div>
             <div class="panel" ng-show="panel.isSelected(3)">
               <h4 class="panel_name">Reviews</h4>
@@ -69,7 +75,7 @@
               </P>
               <form name="reviewForm" class="product_review" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
                 <p>
-                  <b>Stars: {{reviewCtrl.review.stars}}</b>
+                  <b>{{reviewCtrl.review.stars}} star</b>
                 </p>
                 <p>{{reviewCtrl.review.body}}</p>
                 <p>
@@ -83,10 +89,10 @@
                   <option value="4">4 stars</option>
                   <option value="5">5 stars</option>
                 </select>
-                <textarea class="review_body" ng-model="reviewCtrl.review.body" required>Write something.</textarea>
+                <textarea class="review_body" ng-model="reviewCtrl.review.body" placeholder="Write something here." required></textarea>
                 <label>by:</label>
-                <input class="review_author" ng-model="reviewCtrl.review.author" type="email" required/>
-                <div>reviewForm is {{reviewForm.$valid}}</div>
+                <input class="review_author" ng-model="reviewCtrl.review.author" type="email" placeholder="example@email.com" required/>
+                <div id="FV">{{reviewForm.$valid}}</div>
                 <input type="submit" value="Submit" /> 
               </form>
             </div>            

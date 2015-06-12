@@ -1,3 +1,5 @@
+'use strict';
+
 (function() {
   var app = angular.module('store', []);
   app.controller('StoreController', function(){
@@ -9,7 +11,12 @@
   	  modle: 'Speedmaster professional',
   	  price: 6000,
   	  description: 'A true classic, the first ever watch went to the space!',
-  	  canPurchase: true,
+  	  features: ['Chronograph', 'Tachymeter'],
+      size: '42mm',
+      movement: 'Omega 1861',
+      powerReserve: '48 hours',
+      material: 'steel',
+      canPurchase: true,
   	  soldOut: false,
       indicator: true,
       status: 'NEW',
@@ -41,7 +48,12 @@
   	  modle: 'Submariner',
   	  price: 8000,
   	  description: "The first Bond's watch, a classic explorer's watch.",
-  	  canPurchase: true,
+      features: ['Diver watch', 'date'],
+      size: '40mm',
+      movement: 'Rolex 3135',
+      powerReserve: '48 hours',
+      material: 'Yellow gold',	  
+      canPurchase: true,
   	  soldOut: false,
       indicator: true,
       status: 'HOT',
@@ -70,10 +82,15 @@
     },
     {
       brand: 'Zenith',
-  	  modle: 'El Primero',
+  	  modle: 'El Primero Chronomaster Grande Date',
   	  price: 7600,
   	  description: 'The finest of the chronograph watches.',
-  	  canPurchase: true,
+      features: ['Chronograph', 'date', 'moon & sunphase indication'],
+      size: '45 mm',
+      movement: 'El Primero 4047',
+      powerReserve: '90 hours',
+      material: 'Rose gold', 	  
+      canPurchase: true,
   	  soldOut: false,
       indicator: false,
       status: null,
@@ -101,10 +118,15 @@
       ],       
     },
     {
-      brand: 'Jaeger-LeCoulter',
+      brand: 'Jaeger-LeCoultre',
       modle: 'Master Tourbillon',
       price: 20300,
       description: 'Master work from Jaeger-LeCoulter, totally commited to accuracy and reliability.',
+      features: ['tourbillon', 'date'],
+      size: '42mm',
+      movement: 'Jaeger-LeCoultre Calibre 978',
+      powerReserve: '45 hours',
+      material: 'Pink Gold',      
       canPurchase: true,
       soldOut: false,
       indicator: false,
@@ -148,6 +170,6 @@
     this.addReview = function(product) {
       product.reviews.push(this.review);
       this.review = {};
-    };
+    };    
   });
 }) ();
