@@ -2,9 +2,22 @@
 
 (function() {
   var app = angular.module('store', []);
+
+  app.controller('MainController', function() {
+    this.section = 1;
+
+    this.selectSection = function(setSection) {
+      this.section = setSection;
+    };
+    this.sectionSelected = function(checkSection) {
+      return this.section === checkSection;
+    };
+  });
+
   app.controller('StoreController', function(){
     this.products = watches;
   });
+
   var watches =[
     {
   	  brand: 'Omega',
@@ -155,6 +168,7 @@
       ],         
     }
   ];
+
   app.controller('PanelController', function(){
     this.tab = 1;
 
@@ -165,6 +179,7 @@
       return this.tab === checkTab;
     };
   });
+
   app.controller('ReviewController', function(){
     this.review = {};
     this.addReview = function(product) {
