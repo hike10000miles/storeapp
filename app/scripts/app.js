@@ -1,7 +1,7 @@
 'use strict';
 
 (function() {
-  var app = angular.module('store', []);
+  var app = angular.module('store', ['components']);
 
   app.controller('MainController', function() {
     this.section = 1;
@@ -17,7 +17,6 @@
   app.controller('StoreController', function(){
     this.products = watches;
   });
-
   var watches =[
     {
   	  brand: 'Omega',

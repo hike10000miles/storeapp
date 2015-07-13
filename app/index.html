@@ -7,6 +7,7 @@
 
     <!-- build:css styles/vendor.css -->
     <link rel="stylesheet" type="text/css" href="../bower_components/normalize-css/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato|La+Belle+Aurore|Laila' rel='stylesheet' type='text/css'>
     
     <!-- endbuild -->
 
@@ -18,20 +19,29 @@
   <body>
     <!--the title of the shop-->
     <div class="shopName">
-      <h2 class="title">The Lurxy Watch Shop</h2>
+      <h1 class="title">The Lurxy Watch Shop</h1>
     </div>
     <div class="main" ng-controller="MainController as main">
       <!--the nav-->
       <div class="nav">
-        <div class="toggleButton"><span></span></div>
         <ul class="menu">
           <li class="item"><a href ng-click="main.selectSection(1)">Home</a></li>
           <li class="item"><a href ng-click="main.selectSection(2)">Products</a></li>
-          <li class="item"><a href ng-click="main.selectSection(3)">Press</a></li>
-          <li class="item"><a href ng-click="main.selectSection(4)">Contacts</a></li>
+          <li class="item"><a href ng-click="main.selectSection(3)">Watch 101</a></li>
+          <li class="item"><a href ng-click="main.selectSection(4)">Carts</a></li>
         </ul>
       </div>
-      <section class="home" ng-show="main.sectionSelected(1)">{{"Hello"}}</section>
+      <section class="home" ng-show="main.sectionSelected(1)">
+        <div class="intro">
+          
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin tellus quis erat consequat dapibus. In massa metus, porta a lorem vitae, imperdiet venenatis purus. Curabitur a mattis dolor, a pulvinar dolor. Vestibulum fermentum quam sed mauris suscipit, congue ultricies purus pulvinar. Curabitur eget auctor sapien. Donec quis dui eget nisi tempor cursus. Ut sit amet neque ut libero porttitor consectetur dignissim hendrerit mi. Mauris id sem nunc. Suspendisse vitae sollicitudin leo. Curabitur vulputate ac nibh sit amet tincidunt.</p>
+
+          <p>Praesent eget dui leo. Vestibulum mollis diam ac sem pharetra, et fermentum massa pretium. Sed tempor enim dignissim elit tristique rutrum. Nullam vitae bibendum risus, a bibendum est. Maecenas lobortis leo in tellus cursus efficitur. Nunc tempor egestas nisi, eget viverra turpis accumsan viverra. In volutpat eros vel tortor porttitor venenatis. Suspendisse erat felis, tristique sed fermentum eu, suscipit vel dui. Aliquam eget urna lectus.</p>
+
+          <p>Nullam placerat suscipit metus, a tincidunt ex vestibulum ac. Aliquam eget laoreet velit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc mollis vitae nisi ornare tincidunt. Fusce non nibh laoreet, rhoncus sapien ut, auctor ligula. Quisque ut tristique quam. Maecenas id enim nec neque cursus tincidunt. Cras commodo iaculis urna, at consequat enim fringilla sit amet. Duis a varius orci. Morbi imperdiet dignissim maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies est velit, sit amet euismod risus auctor sit amet. In ut tincidunt ligula.</p>
+        
+        </div>
+      </section>
       <!--product listing-->
       <section class="product_container" ng-show="main.sectionSelected(2)" ng-controller="StoreController as store">
         <div class="product_detail" ng-repeat="product in store.products">
@@ -100,8 +110,13 @@
           </div>
         </div>
       </section>
-      <section ng-show="main.sectionSelected(3)">{{"It is so late."}}</section>
-      <section ng-show="main.sectionSelected(4)">{{"But so much to do!"}}</section>
+      <section class="content" ng-show="main.sectionSelected(3)">
+        <div>
+          
+        </div>
+      </section>
+      <section class="Cart" ng-show="main.sectionSelected(4)">
+      </section>
     </div>
     <footer></footer>
     <!-- build:js scripts/main.js -->
@@ -109,6 +124,15 @@
     <script src="scripts/main.js"></script>
     <script src="../bower_components/angular/angular.js"></script>
     <script src="scripts/app.js"></script>
+    <script type="text/javascript">
+      var content = angular.module('components', []);
+        content.directive('helloWorld', function() {
+        return {
+        restrict:'E',
+        template: '<h1>Hello World</h1>'
+      };
+  });
+    </script>
     <!-- endbuild -->
   </body>
 </html>

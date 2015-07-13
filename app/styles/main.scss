@@ -21,6 +21,7 @@ $gril-columns: 12;
 }
 .main {
 	@include outer-container;
+	background-color: #92CDCF;
 }
 html,
 body {
@@ -50,10 +51,11 @@ body {
 	}
   .menu {
   	  margin: 0;
+  	  width: 100%;
 	  padding-left: 0;
+	  background-color: #445878;
 	.item {
 		height: 3rem;
-		width: 100%;
 		padding-top: 1rem;
 		/*display: inline-block;
 		@include span-columns(3);
@@ -100,7 +102,6 @@ body {
 	width: 100%;
 	border-radius: 5px;
 }
-
 
 
 /*****************************************************************************
@@ -157,7 +158,6 @@ body {
 	.item {
 		text-align: center;
 		list-style: none;
-		background-color: white;
 		border-bottom: 2px solid black;
 	}
 	a {
@@ -165,6 +165,31 @@ body {
 		color: black;
 	}
   }
+}
+@media screen and (min-width: 600px) {
+  .menu {
+    .item {
+      background-color: #445878;
+      display: block;
+      width: 25%;
+      float: left;
+      margin: 0;
+    }
+    a {
+    	margin: 0;
+    }
+  }
+  .home {
+  	.intro {
+  		p {
+  			margin-top: 0;
+  		}
+  	}
+  }
+}
+.intro {
+	padding: 20px 20px 20px 20px;
+	clear: both;
 }
 .product_container {
   /*background-color: white;*/
@@ -184,7 +209,7 @@ body {
 		  height: 90%;
 	  }
 	  .product_panel {
-		  background-color: gray;
+		  background-color: #31353D;
 		  padding-top: 10px;
 		  padding-bottom: 10px;
 		  border-radius: 5px;
@@ -199,15 +224,15 @@ body {
 		          display: inline-block;
 		          a {
 			          text-decoration: none;
-			          color: black;
+			          color: #92CDCF;
 		          }
 		      }
 	      }
 	 	  .panel {
 			  margin-left: 5%;
 			  margin-right: 5%;
-			  background-color: yellow;
 			  border-radius: 5px;
+			  color: #EEEFF7;
 	  	      .panel_name {
 	  	  	      text-align: left;
 	  	  	      margin-top: 0;	      
@@ -247,4 +272,20 @@ body {
 }
 .ng-valid.ng-dirty {
 	border-color: #78FA89;
+}
+.title {
+	font-family: 'La Belle Aurore', cursive;
+}
+.menu {
+    .item {
+    	a {
+    		font-family: 'Laila', serif;
+    	}
+    }
+}
+.intor {
+	font-family: 'Lato', sans-serif;
+}
+.product_detail {
+	font-family: 'Lato', sans-serif;
 }
