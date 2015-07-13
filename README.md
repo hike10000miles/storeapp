@@ -1,2 +1,5 @@
 # firstApp
-Tools used in this product, Sass, AngularJS, jQuery and Bourbon. This is the first web app I am making, just want to apply some of the AngularJS I learnt.
+First time using AngularJS to make a web app. I used the Bitmake Lab Yeomen generator to get start. The generator allows me to use Sass, Bourbon, Neat, jQuery, and Grunt, but as it turned out this generator is not the right tool for the job. I cannot deploy my app with this generator.
+In this app, I built a app for a luxury watch store, most of the details of the products were made up. I explored some of the care functions of Angular while building this app, like directives, filters and controllers. I tried to make some customized directives, but no matter what I do, they would not work. 
+While I was building this app, I did not pay too much attention to organize my data, since I did not know how to it at the time in the end the app.js file become too much to organize. Also, I was following the developing strategy of developing with jQuery , I run into a lot trouble with this. In the end I learned that with Angular, I need a different way of thinking about developing. 
+All in all, this was not a very successful project since there are so many future I do not know how to build. However, I learned a lot of lessons here.
